@@ -1,34 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Camera, RefreshCw, ZoomIn, ZoomOut, Check, Image as ImageIcon } from "lucide-react";
 import { portfolioData } from "../data/portfolioData";
+import profilePhoto from "../assets/profile.jpg";
 
 export const ProfileAvatar: React.FC<{ size?: "sm" | "md" | "lg" }> = ({ size = "lg" }) => {
-  const [photoSrc, setPhotoSrc] = useState<string | null>(null);
-  const [zoomLevel, setZoomLevel] = useState<number>(1.35); // 1.35x zoom default cuts out the flower vase in bottom-right
+  const [photoSrc, setPhotoSrc] = useState<string>(profilePhoto);
+  const [zoomLevel, setZoomLevel] = useState<number>(1.08);
   const [isHovered, setIsHovered] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    // Check local storage for user uploaded photo
+    // Check local storage if user customized photo
     const storedPhoto = localStorage.getItem("kd_user_photo_data");
     if (storedPhoto) {
       setPhotoSrc(storedPhoto);
-      return;
     }
-
-    // Attempt to load from public folder (/profile.png or /image.png)
-    const testImg = new Image();
-    testImg.src = "/profile.png";
-    testImg.onload = () => setPhotoSrc("/profile.png");
-    testImg.onerror = () => {
-      // Try image.png
-      const testImg2 = new Image();
-      testImg2.src = "/image.png";
-      testImg2.onload = () => setPhotoSrc("/image.png");
-      testImg2.onerror = () => {
-        // Fallback to default state
-      };
-    };
   }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,9 +68,9 @@ export const ProfileAvatar: React.FC<{ size?: "sm" | "md" | "lg" }> = ({ size = 
               alt="Kavindu Dilshan"
               className="w-full h-full object-cover transition-transform duration-300"
               style={{
-                objectPosition: "center 18%",
+                objectPosition: "center 14%",
                 transform: `scale(${zoomLevel})`,
-                transformOrigin: "50% 25%",
+                transformOrigin: "50% 18%",
               }}
               referrerPolicy="no-referrer"
             />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { portfolioData } from "../data/portfolioData";
 import { useTheme } from "../context/ThemeContext";
-import { Menu, X, ArrowUpRight, FileDown, Github, Linkedin, Sun, Moon, Download } from "lucide-react";
+import { Menu, X, ArrowUpRight, FileDown, Github, Linkedin, Sun, Moon } from "lucide-react";
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -136,16 +136,6 @@ export const Navbar: React.FC = () => {
               <Linkedin className="w-4 h-4" />
             </a>
 
-            <a
-              href="/kavindu-portfolio.zip"
-              download="kavindu-portfolio.zip"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 hover:bg-slate-200 dark:bg-slate-900/90 dark:hover:bg-slate-800 border border-slate-300 dark:border-white/10 transition-colors"
-              title="Download Portfolio Source Code (.ZIP)"
-            >
-              <Download className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
-              <span>Download Code</span>
-            </a>
-
             {hasResume ? (
               <a
                 href={portfolioData.personal.resumeUrl}
@@ -221,14 +211,6 @@ export const Navbar: React.FC = () => {
 
             <div className="pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
-                <a
-                  href="/kavindu-portfolio.zip"
-                  download="kavindu-portfolio.zip"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-white/10"
-                >
-                  <Download className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
-                  <span>Download Code</span>
-                </a>
                 <a
                   href={portfolioData.personal.gitHubUrl}
                   target="_blank"
