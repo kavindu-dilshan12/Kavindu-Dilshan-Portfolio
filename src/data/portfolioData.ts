@@ -82,7 +82,7 @@ export const portfolioData: PortfolioData = {
       "I’m an Information Technology undergraduate at SLIIT, interested in building practical software solutions and growing through hands-on development.",
     aboutText:
       "Information Technology undergraduate at SLIIT with knowledge of Java, Python, C++, web development, and database management. Interested in building practical software solutions and expanding technical skills through hands-on learning. Seeking an IT internship to apply academic knowledge and contribute to a development team.",
-    resumeUrl: "", // Configurable: Set to "/Kavindu_Dilshan_CV.pdf" or external URL when file is available
+    resumeUrl: "/Kavindu_Dilshan_CV.pdf",
     resumeFileName: "Kavindu_Dilshan_CV.pdf",
   },
   navLinks: [
